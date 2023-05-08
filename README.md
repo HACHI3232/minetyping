@@ -1,25 +1,19 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+##  Word table
 
-* Ruby version
+| column       | type    | options                 |
+|--------------|---------|------------------------|
+| id           | integer | not null, primary key   |
+| word         | string  | not null               |
+| mean         | string  | not null               |
+| dictionary_id| integer | not null, foreign key   |
 
-* System dependencies
+## Dictionary table
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# minetyping
+| column      | type   | options                 |
+|-------------|--------|------------------------|
+| id          | integer| not null, primary key   |
+| name        | string | not null               |
+| description | text   | not null               |
