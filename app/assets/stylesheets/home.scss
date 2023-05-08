@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+
+h1,h3 {
+  margin: 0;
+}
+
+ul{
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+
+// home============================
+
+.big-bg {
+  background-size: cover;
+  background-position: center top;
+}
+
+#home {
+	background-image: url("top.jpg");
+  min-height: 100vh;
+}
+
+.home-wrapper {
+  // text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}

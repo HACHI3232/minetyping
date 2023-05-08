@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+#about {
+  background-image: url("sougen.png");
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.about-content {
+  position: relative;
+}
+
+.return {
+  text-align: center;
+  position: absolute;
+  bottom: -30px;
+  right: 0px;
+}
