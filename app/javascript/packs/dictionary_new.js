@@ -1,7 +1,6 @@
 'use strict';
 
 {
-  window.addEventListener('DOMContentLoaded', () => {
 
     const open = document.getElementById('open');
     const close = document.getElementById('close');
@@ -22,5 +21,4 @@
     mask.addEventListener('click', () => {
       close.click();
     });
-  });
 }

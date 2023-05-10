@@ -1,3 +1,4 @@
+
 <div id="typing" class="big-bg">
   <header class="typing-header wrapper">
     <%= link_to root_path do %>
@@ -13,7 +14,8 @@
     </nav>
   </header>
   <div class="typing_body">
-    <p id="target"></p>
-    <p id="result">Finished! 10seconds!</p>
+    <p class="question" id="target">Click to start!</p>
+    <p id="result"></p>
   </div>
 </div>
+<%= javascript_pack_tag 'typing' %>
