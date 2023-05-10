@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'home/index'
-  resources :dictionaries
+  root to: 'home#index'
   get 'abouts/index'
   get 'dictionaries/index'
   get 'characters/index'
+  
+  resources :dictionaries
+  resources :words
 end

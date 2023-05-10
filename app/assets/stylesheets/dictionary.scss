@@ -8,6 +8,8 @@
 }
 
 // ヘッダー===============================
+.wrap{ display: flex; flex-wrap: wrap; }
+
 
 .page-header {
   display: flex;
@@ -55,9 +57,8 @@ main {
 // ボタン・プルダウン==============================
 
 
-.content-section {
+.ui_wrapper {
   display: flex;
-  justify-content: space-between;
   margin-top: 16px;
 }
 
@@ -92,7 +93,18 @@ main {
 }
 
 
-// カード==============================
+// 辞書一覧 //
+
+.dictionary_category{
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.description{
+  border-top: 1px solid;
+  padding: 8px;
+} 
 
 .grid {
   display: grid;
@@ -100,4 +112,74 @@ main {
   grid-template-columns: repeat(4, 1fr);
   margin-top: 3%;
   margin-bottom: 50px;
+}
+
+
+// dictionary new モーダル==============================
+
+
+
+#open, #close{
+  cursor: pointer;
+  width: 200px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  text-align: center;
+  padding: 12px 0;
+  background: white;
+}
+
+#open{
+  margin-left: 16px;
+}
+
+#close {
+  margin: 16px auto 0;
+
+}
+
+#mask {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modal{
+  background: #fff;
+  width: 300px;
+  padding: 20px;
+  background-repeat: 4px;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-align: center;
+  border: 5px solid #00a8ffad;
+  border-radius: 15px;
+  transition: transform 0.4s;
+  z-index: 2;
+}
+
+#modal > p {
+  margin: 0 0 5px;
+}
+
+#mask.hidden {
+  display: none;
+}
+
+
+#modal.hidden {
+  transform: translate(0,-500px);
+}
+
+// ==============================
+
+.add_button{
+  margin: 8px;
 }

@@ -349,3 +349,30 @@ template {
 [hidden] {
   display: none;
 }
+
+
+/* Add
+   ========================================================================== */
+
+ul{
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+}
+
+p {
+  margin: 0;
+}
