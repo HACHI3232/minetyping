@@ -8,6 +8,7 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("./dictionary_new");
+require("./typing");
 
 
 
