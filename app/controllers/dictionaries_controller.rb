@@ -30,7 +30,8 @@ class DictionariesController < ApplicationController
 
 
   def show
-    
+    @dictionary = Dictionary.find(params[:id])
+    # @words = @dictionary.words.order(:id)
   end
 
   private

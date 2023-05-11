@@ -36,9 +36,7 @@
       <% @dictionaries.each do|dictionary| %>
       <div class="d-wrapp">
         <%= image_tag "b_book.png", width: 150, height: 250 %>
-         <div class="dictionary__category fuchidori">
-          <%= dictionary.name %>
-        </div>
+          <%= link_to dictionary.name, dictionary_path(dictionary) ,class:"dictionary__category fuchidori"%>
         <%= link_to "削除", dictionary_path(dictionary), method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn-delete"%>
       </div>
       <% end %>
