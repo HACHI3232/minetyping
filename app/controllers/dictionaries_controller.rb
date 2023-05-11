@@ -11,8 +11,6 @@ class DictionariesController < ApplicationController
 
   def create
     @dictionary = Dictionary.new(dictionary_params)
-    binding.pry
-
     if @dictionary.save
       redirect_to dictionaries_path
     else
@@ -20,6 +18,15 @@ class DictionariesController < ApplicationController
     end
   end
 
+  def edit
+    
+  end
+
+  def destroy
+    @dictionary = Dictionary.find(params[:id])
+    @dictionary.destroy
+    redirect_to dictionaries_path
+  end
 
 
   def show
