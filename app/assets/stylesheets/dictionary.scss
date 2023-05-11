@@ -112,11 +112,45 @@ main {
 .grid {
   display: grid;
   gap: 26px;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   margin-top: 3%;
   margin-bottom: 50px;
 }
 
+
+.d-wrapp {
+  position: relative; /* 親要素に対してpositionを指定することで、子要素に対してposition:absoluteを使用できます */
+}
+
+.d-wrapp img {
+  max-width: 80%; 
+  height: auto; 
+}
+
+.dictionary__category {
+  position: absolute;
+
+  top: 35px;
+  background: #fffffff4;
+  left: 27px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 3px;
+  width: 100px;
+}
+
+.card-content{
+  width: 100%;
+  height: 100%;
+}
+
+.fuchidori {
+  -webkit-text-stroke: 0.5px #010000;
+}
 
 // dictionary new モーダル==============================
 
@@ -124,6 +158,12 @@ main {
 
 #open, #close{
   cursor: pointer;
+
+
+}
+
+#open{
+  margin-left: 16px;
   width: 200px;
   border: 1px solid gray;
   border-radius: 5px;
@@ -132,13 +172,11 @@ main {
   background: white;
 }
 
-#open{
-  margin-left: 16px;
-}
-
 #close {
   margin: 16px auto 0;
-
+  position: absolute;
+  top: -27px;
+  right: -10px;
 }
 
 #mask {
@@ -153,15 +191,11 @@ main {
 
 #modal{
   background: #fff;
-  width: 300px;
+  width: 240px;
   padding: 20px;
-  background-repeat: 4px;
   position: absolute;
-  top: 40px;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  text-align: center;
+  top: 5rem;
+  left: 8rem;
   border: 5px solid #00a8ffad;
   border-radius: 15px;
   transition: transform 0.4s;

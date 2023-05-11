@@ -11,6 +11,7 @@
     open.addEventListener('click', () => {
       modal.classList.remove('hidden');
       mask.classList.remove('hidden');
+      console.log(mask.classList);
 
     });
 
@@ -18,6 +19,7 @@
       modal.classList.add('hidden');
       mask.classList.add('hidden');
     });
+
     mask.addEventListener('click', () => {
       close.click();
     });
