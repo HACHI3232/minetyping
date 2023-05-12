@@ -1,7 +1,6 @@
 'use strict';
 
 {
-  window.addEventListener('DOMContentLoaded', () => {
 
     const open = document.getElementById('open');
     const close = document.getElementById('close');
@@ -12,6 +11,7 @@
     open.addEventListener('click', () => {
       modal.classList.remove('hidden');
       mask.classList.remove('hidden');
+      console.log(mask.classList);
 
     });
 
@@ -19,8 +19,8 @@
       modal.classList.add('hidden');
       mask.classList.add('hidden');
     });
+
     mask.addEventListener('click', () => {
       close.click();
     });
-  });
 }
