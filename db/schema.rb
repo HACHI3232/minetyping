@@ -21,8 +21,10 @@ ActiveRecord::Schema.define(version: 2023_05_11_135442) do
   create_table "words", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "word"
     t.text "mean"
-    t.integer "dictionary_id"
+    t.bigint "dictionary_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["dictionary_id"], name: "index_words_on_dictionary_id"
   end
 
+end

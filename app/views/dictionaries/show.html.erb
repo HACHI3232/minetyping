@@ -1,5 +1,5 @@
-<div id="word" class="big-bg">
-<%= render "shared/header" %>
+<div id="word_body" class="big-bg">
+  <%= render "shared/header" %>
   <main>
     <div class="ui_wrapper">
       <div class="select">
@@ -10,50 +10,41 @@
           </select>
         </label>
       </div><!-- /.select -->
-      <div id="open">
+
+      <!-- modal open -->
+      <div id="openWord">
         単語を登録する
       </div>
     </div>
     <!-- modal window -->
-    <div class="word__modal">
-      <div id="mask" class="hidden"></div>
-      <section id="modal" class="hidden">
-        <p>単語</p>
-        <input type="text">
-        <p>意味</p>
-        <textarea></textarea>
-        <div class="add_button">
-          <button>保存</button>
-        </div>
-        <div id="close">
-          閉じる
-        </div>
-      </section>
+    <div id="modalWord" class="hiddenWord"> 
+      <%= form_with model: [@dictionary, @word], local: true do |f| %>
+      <%= f.label :word, "新しい単語：" %>
+      <%= f.text_field :word %><br>
+        <%= f.label :mean, "意味：" %><br>
+        <%= f.text_area :mean, id: "mean-text-area" %>
+      <div class="word_add_button">
+        <%= f.submit "保存" %>
+      </div>
+      <% end %>
+      <div id="closeWord">
+        <span class="material-symbols-outlined">
+          cancel
+        </span>
+      </div>
     </div>
+    <div id="maskWord" class="hiddenWord"></div>
     <!-- end modal window -->
-    <div class="card-content grid">
-      <div class="dictionary_category">
-        <h3 class="name">単語</h3>
-        <p class="description">カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明
-        カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明
-        カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明
-        </p>
-      </div><!-- /.book -->
-      <div class="dictionary_category">
-        <h3 class="name">単語</h3>
-        <p class="description">カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明
-        カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明
-        カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明
-        </p>
-      </div><!-- /.book -->
-      <div class="dictionary_category">
-        <h3 class="">単語</h3>
-        <p class="description">カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明
-        カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明
-        カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明カードの説明
-        </p>
-      </div><!-- /.book -->
-    </div><!-- /.book-content grid -->
+
+  <div class="card-content grid">
+    <% @words.each do |word| %>
+      <div class="word_lists">
+        <h3 class="word"><%= word.word %></h3>
+        <p class="description"><%= word.mean %></p>
+      </div>
+    <% end %>
+  </div>
+    </div><!-- /.card-content grid -->
   </main> 
 </div><!-- /#dictionary /.big-bg-->
-<script></script>
+<%= javascript_pack_tag 'add_word_modal' %>

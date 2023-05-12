@@ -1,8 +1,11 @@
 class Word < ApplicationRecord
-  varidates :name, presence :true
-  varidates :word, presence :true
-  validates :dictionary_id, presence: true
+  validates :word, presence: true
+  validates :mean, presence: true
 
-  belongs to :dictionaries
+
+
+  validates :dictionary, presence: true
+
+  belongs_to :dictionary
 
 end

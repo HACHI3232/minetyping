@@ -2,7 +2,7 @@
 @charset "UTF-8";
 
 // ======================================
-#word{
+#word_body{
   background: #ABF3E6;
   min-height: 100vh;
 }
@@ -32,3 +32,75 @@
 .return_button{
   text-align: center;
 }
+
+
+// 単語登録 モーダル==============================
+
+
+
+#openWord, #closeWord{
+  cursor: pointer;
+
+
+}
+
+#openWord {
+  margin-left: 16px;
+  width: 200px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  text-align: center;
+  padding: 12px 0;
+  background: white;
+}
+
+#closeWord {
+  margin: 16px auto 0;
+  position: absolute;
+  top: -27px;
+  right: -10px;
+}
+
+#maskWord {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modalWord {
+  background: #fff;
+  width: 260px;
+  padding: 20px;
+  position: absolute;
+  top: 5rem;
+  left: 8rem;
+  border: 5px solid #00c913ad;
+  border-radius: 15px;
+  transition: transform 0.4s;
+  z-index: 2;
+  font-size: 1.5rem;
+}
+
+#modalWord > p {
+  margin: 0 0 5px;
+}
+
+#maskWord.hiddenWord {
+  display: none;
+}
+
+
+#modalWord.hiddenWord {
+  transform: translate(0,-500px);
+}
+
+.word_add_button {
+  margin-left: 192px;
+
+}
+
+// ==============================

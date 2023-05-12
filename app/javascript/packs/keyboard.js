@@ -11,7 +11,7 @@ const Keyboard = {
 
   properties: {
     value: "",
-    capslock:false;
+    capslock:false
   },
   init() {
     //create main elements
