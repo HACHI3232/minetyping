@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("./dictionary_new");
 require("./typing");
+require("./keyboard");
 
 
 

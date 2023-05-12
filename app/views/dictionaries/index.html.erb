@@ -1,3 +1,4 @@
+
 <div id="dictionary" class="big-bg">
   <%= render "shared/dictionary_header" %>
   <main>
@@ -16,30 +17,30 @@
       </div>
     </div>
     <!-- modal window -->
-    <div class="dictionary__modal">
-      <div id="mask" class="hidden"></div>
-      <section id="modal" class="hidden">
-        <p>辞書の名前</p>
-        <input type="text">
-        <div class="add_button">
-          <button>保存</button>
-        </div>
-        <div id="close">
-          閉じる
-        </div>
-      </section>
+    <div id="modal" class="hidden"> 
+      <%= form_with(model: @dictionary, local: true) do |f| %>
+      <%= f.label :name, "辞書の名前：" %><br>
+
+      <%= f.text_field :name %>
+      <%= f.submit "保存" %>
+    <% end %>
+    <div id="close">
+      <span class="material-symbols-outlined">
+        cancel
+      </span>
     </div>
+    </div>
+    <div id="mask" class="hidden"></div>
     <!-- end modal window -->
     <div class="card-content grid">
-      <div class="dictionary_category">
-        <%= link_to "辞書の名前", "#", class: "add-button__dictionary" %>
-      </div><!-- /.book -->
-      <div class="dictionary_category">
-        <%= link_to "辞書の名前", "#", class: "add-button__dictionary" %>
-      </div><!-- /.book -->
-      <div class="dictionary_category">
-        <%= link_to "辞書の名前", "#", class: "add-button__dictionary" %>
-      </div><!-- /.book -->
-    </div><!-- /.book-content grid -->
+      <% @dictionaries.each do|dictionary| %>
+      <div class="d-wrapp">
+        <%= image_tag "b_book.png", width: 150, height: 250 %>
+          <%= link_to dictionary.name, dictionary_path(dictionary) ,class:"dictionary__category fuchidori"%>
+        <%= link_to "削除", dictionary_path(dictionary), method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn-delete"%>
+      </div>
+      <% end %>
+    </div>
   </main> 
 </div><!-- /#dictionary /.big-bg-->
+<%= javascript_pack_tag 'dictionary_new' %>
