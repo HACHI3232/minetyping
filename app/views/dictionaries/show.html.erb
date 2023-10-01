@@ -15,6 +15,7 @@
       <div id="openWord">
         単語を登録する
       </div>
+
     </div>
     <!-- modal window -->
     <div id="modalWord" class="hiddenWord"> 
@@ -35,16 +36,38 @@
     </div>
     <div id="maskWord" class="hiddenWord"></div>
     <!-- end modal window -->
-
-  <div class="card-content grid">
-    <% @words.each do |word| %>
-      <div class="word_lists">
-        <h3 class="word"><%= word.word %></h3>
-        <p class="description"><%= word.mean %></p>
+    <!-- modal window -->
+    <div id="modalEditWord" class="hiddenEditWord"> 
+      <%= form_with model: [@dictionary, @word], local: true do |f| %>
+      <%= f.label :word, "編集：" %>
+      <%= f.text_field :word, value: @word.word %><br>
+      <%= f.label :mean, "意味：" %><br>
+      <%= f.text_area :mean, id: "mean-text-area", value: @word.mean %>
+      <div class="word_add_button">
+        <%= f.submit "保存" %>
       </div>
-    <% end %>
-  </div>
+      <% end %>
+      <div id="closeEditWord">
+        <span class="material-symbols-outlined">
+          cancel
+        </span>
+      </div>
+    </div>
+    <div id="maskEditWord" class="hiddenEditWord"></div>
+    <!-- end modal window -->
+    <div class="card-content grid">
+      <% @words.each do |word| %>
+        <div class="word_lists">
+          <h3 class="word"><%= word.word %></h3>
+          <p class="description"><%= word.mean %></p>
+<%= link_to "削除", dictionary_word_path(@dictionary, word), method: :delete, data: { confirm: '本当に削除しますか?' }, class: "btn-delete"%>
+          <div id="openEditWord">
+            編集
+          </div>
+        </div>
+      <% end %>
     </div><!-- /.card-content grid -->
   </main> 
 </div><!-- /#dictionary /.big-bg-->
 <%= javascript_pack_tag 'add_word_modal' %>
+<%= javascript_pack_tag 'edit_word_modal' %>

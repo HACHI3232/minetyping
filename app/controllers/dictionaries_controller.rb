@@ -19,7 +19,8 @@ class DictionariesController < ApplicationController
   end
 
   def edit
-    
+    @dictionary = Dictionary.find(params[:dictionary_id])
+    @word = @dictionary.words.find(params[:id])
   end
 
   def destroy

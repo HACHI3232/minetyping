@@ -104,3 +104,64 @@
 }
 
 // ==============================
+
+
+#openEditWord, #closeEditWord{
+  cursor: pointer;
+
+
+}
+
+#openEditWord {
+
+  padding: 12px 0;
+}
+
+#closeEditWord {
+  margin: 16px auto 0;
+  position: absolute;
+  top: -27px;
+  right: -10px;
+}
+
+#maskEditWord {
+  background: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modalEditWord {
+  background: #fff;
+  width: 260px;
+  padding: 20px;
+  position: absolute;
+  top: 5rem;
+  left: 30rem;
+  border: 5px solid #00c913ad;
+  border-radius: 15px;
+  transition: transform 0.4s;
+  z-index: 2;
+  font-size: 1.5rem;
+}
+
+#modalEditWord > p {
+  margin: 0 0 5px;
+}
+
+#maskEditWord.hiddenEditWord {
+  display: none;
+}
+
+
+#modalEditWord.hiddenEditWord {
+  transform: translate(0,-500px);
+}
+
+.word_edit_button {
+  margin-left: 192px;
+
+}

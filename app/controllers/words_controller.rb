@@ -10,6 +10,20 @@ class WordsController < ApplicationController
     end
   end
 
+  def edit
+    @word = Word.find(params[:id])
+  end
+
+  def update
+    
+  end
+
+  def destroy
+    @word = Word.find(params[:id])
+    @word.destroy
+    redirect_to  dictionaries_path
+  end
+
   private
 
   def word_params
